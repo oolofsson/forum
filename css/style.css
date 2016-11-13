@@ -1,0 +1,147 @@
+#container{
+    min-height: 100%;
+}
+#register{
+    text-align: center;
+}
+#mainheader{
+	background-color: #262626;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 150px;
+    width: 100%;
+    overflow:hidden;
+    color: white;
+}
+#mainmenu{ 
+	background-color: #333;
+    top: 50px;
+}
+#leftcontent{
+    float: left;
+    margin-top: 150px;
+    position: absolute;
+    max-width: 600px;
+    overflow:auto;
+    padding-bottom: 150px;
+}
+#sidebar{
+	float: right;
+    margin-top: 150px;
+    overflow:auto;
+    padding-bottom: 180px;
+}
+#mainmenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#mainmenu li {
+    float: left;
+}
+#mainmenu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#mainmenu li a:hover {
+    background-color: #111;
+}
+#threadlist{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+#threadlist ul {
+    list-style-type: none;
+    padding: 5px;
+}
+#threadlist li {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+#threadlist li:hover {
+    opacity: 0.5;
+    background-color: lightgrey;
+    cursor: pointer;
+    color: #728f24;
+}
+#threadlist a{
+    color: black;
+    text-decoration: none;
+}
+#threadauthor{
+    border-bottom: 2px solid blue;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+#threadauthor:hover{
+    color: blue;
+}
+#thread{
+    border: 1px solid black;
+    width: 500px;
+    padding: 10px;
+}
+.center{
+	margin-left: 20% !important;
+	margin-right: 20% !important;
+}
+.middle{
+	margin-top: 20%;
+	
+}
+form{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+input{
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+input[type="submit"]{
+    background-color: lightgreen;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: green;
+}
+.warning{
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    border: 1px solid red; 
+    border-radius: 5px;
+    background-color: pink;
+    padding: 5px;
+}
+.success{
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    border: 1px solid green; 
+    border-radius: 5px;
+    background-color: lightgreen;
+    padding: 5px;   
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+#mainfooter {
+    background-color: #A6CE39;
+    padding-top:6px;
+    padding-bottom:6px;
+    min-width:100%;
+    bottom:0;
+    position: fixed;
+}
