@@ -29,7 +29,7 @@
 			$this->title = $thread['title']; 			
 			$this->textField = $thread['text_field'];
 			$this->author = $thread['author'];
-			$this->date_time = $thread['date_time'];
+			$this->date_timeime = $thread['date_time'];
 		}
 		function getThreads(){
 			include('./includes/connection.php');

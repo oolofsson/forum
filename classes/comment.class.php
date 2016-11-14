@@ -1,7 +1,7 @@
 <?php
 	class Comment {
 		private $id;
-		private $comment;
+		private $commentText;
 		private $author;
 		private $dateTime;
 		private $thread;
@@ -9,40 +9,39 @@
 		//constructor? before inserting
 		//get from database function?
 
-		function createNewThread($thread, $comment, $author){
+		function createNewComment($commentText, $author, $thread){
 			include('./includes/connection.php');
 			
-			$sql = "INSERT INTO threads (title, text_field, author, date_time) VALUES ('$title', '$textField', '$author', NOW())";
+			$sql = "INSERT INTO comments (comment_text, author, date_time, thread) VALUES ('$commentText', '$author', NOW(), '$thread')";
 			$conn->query($sql);
 		
 		}
 		
-		function getThread($id){ 
+		function getComment($id){ 
 			include('./includes/connection.php');
 
-			$sql = "SELECT * FROM threads WHERE id = '$id'";
+			$sql = "SELECT * FROM comments WHERE id = '$id'";
 			
 			$result = $conn->query($sql);
-			$thread = mysqli_fetch_assoc($result);
+			$comment = mysqli_fetch_assoc($result);
 
-			$this->id = $thread['id'];
-			$this->title = $thread['title']; 			
-			$this->textField = $thread['textField'];
-			$this->author = $thread['author'];
-			$this->date_time = $thread['date_time'];
+			$this->id = $comment['id'];
+			$this->commentText = $comment['comment_text']; 			
+			$this->author = $comment['author'];
+			$this->dateTime = $comment['date_time'];
+			$this->thread = $comment['thread'];
 		}
-		function getThreads(){
+		function getComments($thread){
 			include('./includes/connection.php');
 
-			$sql = "SELECT * FROM threads ORDER BY date_time DESC";
+			$sql = "SELECT * FROM comments WHERE thread = '$thread' ORDER BY date_time DESC";
 			
-			$threads = array();
+			$comments = array();
 			$result = $conn->query($sql);
-			while($thread = mysqli_fetch_assoc($result)){
-				$threads[] = $thread;
+			while($comment = mysqli_fetch_assoc($result)){
+				$comments[] = $comment;
 			}
-			
-			return $threads;
+			return $comments;
 		}
 
 		// getters and setters
@@ -54,18 +53,11 @@
 			$this->id = $id;
 		}*/
 
-		function getTitle(){
-			return $this->title;
+		function getCommentText(){
+			return $this->commentText;
 		}
-		function setTitle($title){
-			$this->title = $title;
-		}
-
-		function gettextField(){
-			return $this->textField;
-		}
-		function settextField($textField){
-			$this->textField = $textField;
+		function setCommentText($commentText){
+			$this->commentText = $commentText;
 		}
 
 		function getAuthor(){
@@ -82,6 +74,12 @@
 			$this->dateTime = $dateTime;
 		}*/
 
+		function getThread(){
+			return $this->thread;
+		}
+		function setThread($thread){
+			$this->thread = $thread;
+		}
 
 	}
 

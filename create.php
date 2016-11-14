@@ -10,7 +10,7 @@
 		include("classes/user.class.php");
 		$user = new User();
 		$user->getUserData($_SESSION['email']);
-		echo '<h1>Välkommen '.$user->getFirstname().' '.$user->getLastname().'</h1>';
+		echo '<h1>'.$user->getFirstname().' '.$user->getLastname().'</h1>';
 	}
 
 	if(isset($_POST['title']) && isset($_POST['textfield'])){
@@ -24,12 +24,10 @@
 		}
 	}
 ?>
-
-	<h2>Startsidan</h2>
-	<p>Det här är startsidan.</p>
+	<h2>Ny Tråd</h2>
 	<form action="" method="POST">
 		<input type="text" name="title" placeholder="Titel"><br>
-		<textarea name="textfield" placeholder="Text" cols="30" rows ="20"></textarea><br>
+		<textarea name="textfield" placeholder="Text" cols="50" rows ="10"></textarea><br>
 		<input type="submit" value="Publicera">	
 	</form>
 	

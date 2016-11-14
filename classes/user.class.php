@@ -44,7 +44,7 @@
 			$this->firstname = $user['firstname'];
 			$this->lastname = $user['lastname'];
 			$this->text = $user['text'];
-			$this->imagepath = $user['imagepath'];				
+			//$this->imagepath = $user['imagepath'];				
 		}
 
 
