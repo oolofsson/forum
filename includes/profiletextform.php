@@ -3,15 +3,16 @@
 		if(empty($_POST['profiletext'])){
 			include('messages/emptyfields.php');
 		}else{
-			include('classes/user.class.php');
-			$user = new User();
-			$user->addText($_SESSION['email'], $_POST['text']);
+			//$user already created in profile.php
+			$user->addText($_SESSION['email'], $_POST['profiletext']);
+			header('Location: profile.php');
+			end();
 		}
 	}
 ?>
 <div>
 	<form action="" method="post">
-		<input type="text" name="profiletext">
-		<input type="submit" value="Lägg till text">
+		<textarea name="profiletext" placeholder="Info" cols="20" rows ="5"></textarea><br>
+		<input type="submit" value="Lägg till info">
 	</form>
 </div>

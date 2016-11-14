@@ -50,6 +50,12 @@
 			include('./includes/connection.php');
 			$sql = "UPDATE users SET usertext = '$text' WHERE email = '$email'";
 			$conn->query($sql);	
+
+		}
+		function addImagePath($email, $path){ //delete old picture
+			include('./includes/connection.php');
+			$sql = "UPDATE users SET image_path = '$path' WHERE email = '$email'";
+			$conn->query($sql);				
 		}
 
 		// getters and setters
@@ -82,11 +88,11 @@
 			$this->lastname = $lastname;
 		}
 
-		function getText(){
-			return $this->text;
+		function getUserText(){
+			return $this->userText;
 		}
-		function setText($text){
-			$this->text = $text;
+		function setUserText($userText){
+			$this->userText = $userText;
 		}
 
 		function getImagepath(){

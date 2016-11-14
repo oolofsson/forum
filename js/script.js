@@ -8,6 +8,10 @@ $(document).ready(function(){
 		window.location.href = "?changeinfo";
 	});
     
+	$("#addProfilePicture").click(function(){
+		window.location.href = "?changeprofilepicture";
+	});
+
     $window = $(window);
 	$window.scroll(function() {
 	    if ($window.scrollTop() >= 110) {
