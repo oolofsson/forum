@@ -4,6 +4,9 @@ $(document).ready(function(){
 	$(".warning").delay(2000).fadeOut(2000);
 	$(".success").delay(2000).fadeOut(2000);
 
+	$("#addInfo").click(function(){
+		window.location.href = "?changeinfo";
+	});
     
     $window = $(window);
 	$window.scroll(function() {

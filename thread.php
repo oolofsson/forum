@@ -32,7 +32,6 @@
 		?>
 	</div>
 	<h3>Kommentarer</h3>
-	<ul>
 	<?php
 		include('classes/comment.class.php');
 		$comment = new Comment();
@@ -54,7 +53,6 @@
 				}
 			}
 	?>
-	</ul>
 	<h3>Kommentera</h3>
 	<form action="" method="POST">
 		<textarea name="comment" placeholder="Text" cols="50" rows ="1"></textarea><br>

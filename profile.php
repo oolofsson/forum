@@ -14,9 +14,15 @@
 	}
 ?>
 
-<button>Ändra information</button>
-<button>Lägg till profilbild</button>
-<button>Lägg till info</button>
+<button id="changeInfo">Ändra information</button>
+<button id="addProfilePicture">Lägg till profilbild</button>
+<button id="addInfo">Lägg till info</button>
+	<?php
+		if(isset($_GET['changeinfo'])){
+			include('includes/profiletextform.php');
+		}
+	?>
+
 	<h3>Senaste trådar</h3>
 	<h3>Senaste kommentarer</h3>
 	

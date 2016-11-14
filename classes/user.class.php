@@ -4,7 +4,7 @@
 		private $password;
 		private $firstname;
 		private $lastname;
-		private $text;
+		private $userText;
 		private $imagepath;
 
 		//constructor? before inserting
@@ -43,11 +43,14 @@
 			$this->password = $user['email'];
 			$this->firstname = $user['firstname'];
 			$this->lastname = $user['lastname'];
-			$this->text = $user['text'];
-			//$this->imagepath = $user['imagepath'];				
+			$this->userText = $user['usertext'];
+			$this->imagepath = $user['image_path'];				
 		}
-
-
+		function addText($email, $text){
+			include('./includes/connection.php');
+			$sql = "UPDATE users SET usertext = '$text' WHERE email = '$email'";
+			$conn->query($sql);	
+		}
 
 		// getters and setters
 
