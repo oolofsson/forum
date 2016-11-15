@@ -4,8 +4,14 @@
         <li><a href="threads.php">Trådar</a></li>
 
         <?php
-        	if(isset($_SESSION['email'])){ //if login in session is set show logout menu
-    			echo '<li><a href="profile.php">Min Sida</a></li>';
+            
+            include("classes/user.class.php");
+            $user = new User();
+
+            if(isset($_SESSION['email'])){ //if login in session is set show logout menu
+                $user->getUserData($_SESSION['email']);
+
+    			echo '<li><a href="profile.php">'.$user->getFirstname().' '.$user->getLastname().'</a></li>';
     			echo '<li><a href="create.php">Skapa tråd</a></li>';
     			echo '<li><a href="logout.php">Logga ut</a></li>'; //replace with include?
 			} 

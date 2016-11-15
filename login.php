@@ -1,3 +1,7 @@
+<?php
+	$page_title = "Välkommen";
+	include("includes/header.php");
+?>
 <?php  //Start the Session
 
 	session_start();
@@ -45,8 +49,8 @@
 					include('messages/emptyfields.php');
 				}else{
 					if($_POST['new_password'] == $_POST['repeat_password']){
-						include('classes/user.class.php');
-						$user = new User();
+						//include('classes/user.class.php');
+						//$user = new User();
 						$user->createNewUser($_POST['new_email'], $_POST['new_password'], $_POST['firstname'], $_POST['lastname']);
 						include('messages/createduser.php');
 					}else{
@@ -58,10 +62,6 @@
 ?>
 
 
-<?php
-	$page_title = "Välkommen";
-	include("includes/header.php");
-?>
 	<h2>Logga in</h2>
 	<form method="POST">
 		<input type="email" name="email" placeholder="E-post"><br>

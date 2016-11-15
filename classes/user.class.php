@@ -22,7 +22,7 @@
 		function validEmail($email, $conn){
 			$sql = "SELECT email FROM users WHERE email = '$email'";
 			
-			$email = $conn->query($sql);
+			$emails = $conn->query($sql);
 
 			if($emails->num_rows == 0){
 		        return true;

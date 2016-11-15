@@ -3,14 +3,7 @@
 	$page_title = "Trådar";
 	include("includes/header.php");
 ?>
-<?php
-	include("classes/user.class.php");
-	if(isset($_SESSION['email'])){ //if login in session is set
-		$user = new User();
-		$user->getUserData($_SESSION['email']);
-		echo '<h1>Välkommen '.$user->getFirstname().' '.$user->getLastname().'</h1>';
-	}
-?>
+
 
 	<h2>Tråd</h2>
 	<div id="thread">

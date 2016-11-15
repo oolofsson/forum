@@ -6,11 +6,6 @@
 <?php
 	if(!isset($_SESSION['email'])){ //if login in session is not set
     	header("Location: login.php");
-	}else{
-		include("classes/user.class.php");
-		$user = new User();
-		$user->getUserData($_SESSION['email']);
-		echo '<h1>Välkommen '.$user->getFirstname().' '.$user->getLastname().'</h1>';
 	}
 ?>
 
