@@ -44,7 +44,19 @@
 			
 			return $threads;
 		}
+		function getThreadsByUser($email){
+			include('./includes/connection.php');
 
+			$sql = "SELECT * FROM threads WHERE author = '$email' ORDER BY date_time DESC";
+			
+			$threads = array();
+			$result = $conn->query($sql);
+			while($thread = mysqli_fetch_assoc($result)){
+				$threads[] = $thread;
+			}
+			
+			return $threads;
+		}
 		// getters and setters
 
 		function getId(){

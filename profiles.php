@@ -22,6 +22,27 @@
 	<h4>Om</h4>
 	<p><?php echo $profile->getUserText();?></p>	
 </div>
+<h3>Senaste trådar</h3>
+<div id="threadlist">
+	<ul>
+	<?php
+		include("classes/thread.class.php");
+		$thread = new Thread();
+		$threads = $thread->getThreadsByUser($profile->getEmail());
+				
+		$i = 0;
+		foreach($threads as $obj){
+			if($i > 2) break;
+			echo '<a id="threadauthor">'.$profile->getFirstname().' '.$profile->getLastname().'</a>';
+			
+			echo '<a href="thread.php?thread='.$obj['id'].'"><li><h2>'.$obj['title'].'</h2><br>
+				<p>'.$obj['text_field'].'</p></li></a>'; 
+
+			if (++$i == 2) break;
+		}
+	?>
+	</ul>
+</div>
 <?php
 	include("includes/sidebar.php");
 	include("includes/footer.php");
