@@ -17,7 +17,7 @@
 			$author = new User();
 			
 			$author->getUserData($thread->getAuthor());
-			echo '<a id="threadauthor" href="#">'.$author->getFirstname().' '.$author->getLastname().'</a>';
+			echo '<a id="threadauthor" href="profiles.php?user='.$author->getEmail().'">'.$author->getFirstname().' '.$author->getLastname().'</a>';
 			echo '<h2>'.$thread->getTitle().'</h2><br>
 				<p>'.$thread->getTextField().'</p>'; 
 
@@ -32,7 +32,7 @@
 
 		foreach($comments as $obj){
 			$author->getUserData($obj['author']);
-			echo '<a id="commentauthor" href="#user">'.$author->getFirstname().' '.$author->getLastname().'</a>';
+			echo '<a id="commentauthor" href="profiles.php?user='.$author->getEmail().'">'.$author->getFirstname().' '.$author->getLastname().'</a>';
 			echo '<p id="comment">'.$obj['comment_text'].'</p>';
 			
 		}

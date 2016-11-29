@@ -23,7 +23,7 @@
 	?>
 	<div id="infobox">
 		<h4>Profilbild</h4>
-		<img src="img/<?php echo $user->getImagePath() ?>" width="50" height="50" >
+		<img src="img/<?php echo $user->getImagePath() ?>" width="150" height="150" >
 		<h4>Om</h4>
 		<p><?php echo $user->getUserText();?></p>
 	</div>

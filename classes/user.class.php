@@ -52,7 +52,7 @@
 			$conn->query($sql);	
 
 		}
-		function addImagePath($email, $path){ //delete old picture
+		function addImagePath($email, $path){ 
 			include('./includes/connection.php');
 			$sql = "UPDATE users SET image_path = '$path' WHERE email = '$email'";
 			$conn->query($sql);				

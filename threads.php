@@ -18,7 +18,7 @@
 				$author = new User();
 				foreach($threads as $obj){
 					$author->getUserData($obj['author']);
-					echo '<a id="threadauthor" href="#user">'.$author->getFirstname().' '.$author->getLastname().'</a>';
+					echo '<a id="threadauthor" href="profiles.php?user='.$author->getEmail().'">'.$author->getFirstname().' '.$author->getLastname().'</a>';
 					
 					echo '<a href="thread.php?thread='.$obj['id'].'"><li><h2>'.$obj['title'].'</h2><br>
 						<p>'.$obj['text_field'].'</p></li></a>'; 

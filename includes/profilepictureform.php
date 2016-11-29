@@ -19,7 +19,6 @@
 				$path_parts = pathinfo($_FILES["profilepicture"]["name"]);
 				$image_path = $path_parts['filename'].'_'.time().'.'.$path_parts['extension'];
 
-				
 				//timestamp?
 				if($_FILES['profilepicture']['size'] > (1024000)) //can't be larger than 1 MB
 				{
@@ -30,9 +29,17 @@
 				//if the file has passed the test
 				if($valid_file)
 				{
+					//get old filename for removal
+					$old_filename = 'img/'.$user->getImagepath();
+					
 					//move it to where we want it to be
 					move_uploaded_file($_FILES['profilepicture']['tmp_name'], 'img/'.$image_path);
 					$user->addImagePath($_SESSION['email'], $image_path);
+					
+					//delete old userpicture
+					if (file_exists($old_filename)) {
+					    unlink($old_filename);
+					}
 					header('Location: profile.php');
 					end();
 				}
