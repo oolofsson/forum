@@ -1,11 +1,18 @@
 $(document).ready(function(){
 	//fungerar ej?
 	$('#searchbar').keyup(function(){
+		
+		$('#backresult').show();
 		var search = $(this).val();
-
-		$.post('includes/searchresult.php', { search:search }, function(data){
-			$('#backresult').html(data);
+		$.ajax({
+			type: 'GET',
+			url: 'includes/searchresults.php',
+			data: 'search='+search,
+			success:function(data){
+				$('#backresult').html(data);
+			}
 		});
+		
 	});
 
 	$(".warning").delay(2000).fadeOut(2000);

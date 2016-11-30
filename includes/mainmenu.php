@@ -17,10 +17,9 @@
                 echo '<li><a href="logout.php">Logga ut</a></li>'; //replace with include?
             } 
         ?>
-        <form name="searchform" id="searchform" method="POST">
+        <form name="searchform" id="searchform" method="GET">
             <li><input id="searchbar" type="text" name="search" placeholder="Sök.."></li>
         </form>
     </ul>
-    <div id="backresult"></div>
-
 </nav>
+

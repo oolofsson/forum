@@ -16,6 +16,6 @@
             <h1 class="center"><a id="logo" href="index.php">Forum</a></h1>
             <?php include("includes/mainmenu.php"); ?>
         </header>
-
         <section class="middle center" id="leftcontent">
+        <div id="backresult">Resultat visas här</div>
     

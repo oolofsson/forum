@@ -12,7 +12,7 @@
 		}else{
 	?>
 	<div>
-		<h1>Välkommen till forumet, läs mer om oss.</h1>
+		<h1>Välkommen till forumet</h1>
 	</div>	
 	<?php
 		}

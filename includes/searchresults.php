@@ -1,22 +1,25 @@
 <?php
 	//list based on ajax?
 	//foreach ($variable as $key => $value) {
-	include('includes/connection.php');
-	if(isset($_POST['search'])){
-		$sqlUsers = "SELECT * FROM users WHERE firstname LIKE '%".$_POST['search']."%' OR lastname LIKE '%".$_POST['search']."%'";
-		$sqlThreads = "SELECT * FROM threads WHERE title LIKE '%".$_POST['search']."%' OR text LIKE '%".$_POST['search']."%'";
+	if(isset($_GET['search'])){
+		include('connection.php');
+		$sqlUsers = "SELECT * FROM users WHERE firstname LIKE '%".$_GET['search']."%' OR lastname LIKE '%".$_GET['search']."%'";
+		$sqlThreads = "SELECT * FROM threads WHERE title LIKE '%".$_GET['search']."%' OR text_field LIKE '%".$_GET['search']."%'";
 		
+		//$sqlUsers = "SELECT * FROM users";
+		//$sqlThreads = "SELECT * FROM threads";
+
 		$resutlUsers = $conn->query($sqlUsers);
 		$resutlThreads = $conn->query($sqlThreads);
 
 ?>
-<ul>
+<ul id="resultlist">
 <?php
-		foreach ($resutlUsers as $user) {
-			echo '<li><a>'.$user['firstname'].' '.$user['lastname'].'</a>';		
+		while ($user = mysqli_fetch_assoc($resutlUsers)) {
+			echo '<li><a href="#">'.$user['firstname'].' '.$user['lastname'].'</a>';		
 		}
-		foreach ($resutlThreads as $thread) {
-			echo '<li><a>'.$thread['title'].'</a></li>';	
+		while ($thread = mysqli_fetch_assoc($resutlThreads)) {
+			echo '<li><a href="#">'.$thread['title'].'</a></li>';	
 		}
 ?>
 </ul>
