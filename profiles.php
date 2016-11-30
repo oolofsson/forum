@@ -5,12 +5,16 @@
 ?>
 <?php
 	if(isset($_GET['user'])){
-		if($_GET['user'] == $_SESSION['email']){
-			header("Location: profile.php");
-		}else{
-			$profile = new User();
-			$profile->getUserData($_GET['user']);
+		if(isset($_SESSION['email'])){
+			if($_GET['user'] == $_SESSION['email']){
+				header("Location: profile.php");
+			}
 		}
+		$profile = new User();
+		$profile->getUserData($_GET['user']);
+
+	}else{
+		//message not found?
 	}
 ?>
 <div id="profileinfo">
@@ -23,7 +27,6 @@
 <div id="threadlist">
 	<ul>
 	<?php
-		
 		
 		$userThreads = $thread->getThreadsByUser($profile->getEmail());
 				

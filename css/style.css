@@ -59,16 +59,29 @@
 #mainmenu li a:hover {
     background-color: #111;
 }
+#searchform{
+    float: right;
+    margin-right: 50px;
+}
 #searchbar{
     width: 130px;
     display: inline-block;
     padding: 10px 10px;
-    margin-left: 20px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 #searchbar:focus{
-     width: 100%;
+     border: 2px solid lightblue;
+}
+#backresult{
+    position: absolute;  
+    top: 20%; 
+    border: 1px solid black; 
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    width: 500px;
+}
+#backresult ul{
+    list-style: none;
 }
 #threadlist{
     border: 1px solid lightgrey;

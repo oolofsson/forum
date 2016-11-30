@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 	$(".warning").delay(2000).fadeOut(2000);
 	$(".success").delay(2000).fadeOut(2000);
-
+	$("#backresult").hide();
 	$("#addInfo").click(function(){
 		window.location.href = "?changeinfo";
 	});
@@ -45,5 +45,8 @@ $(document).ready(function(){
 	        $('#searchbar').show();
 	    }
 	});
-    
+    $('body').click(function(){
+    	$('#backresult').delay(200).fadeOut(200);
+    	$('#searchbar').val("");
+    })
 });

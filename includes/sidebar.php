@@ -1,6 +1,7 @@
 </section><!-- /leftcontent -->
 
 <section class="center" id="sidebar">
+	<div id="backresult"></div>
     <?php
 		if(isset($_SESSION['email'])) { //if login in session is not set
     ?>
