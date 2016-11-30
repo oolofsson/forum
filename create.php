@@ -20,7 +20,7 @@
 	}
 ?>
 	<h2>Ny Tråd</h2>
-	<form action="" method="POST">
+	<form class="form" method="POST">
 		<input type="text" name="title" placeholder="Titel"><br>
 		<textarea name="textfield" placeholder="Text" cols="50" rows ="10"></textarea><br>
 		<input type="submit" value="Publicera">	

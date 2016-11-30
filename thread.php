@@ -8,10 +8,8 @@
 	<h2>Tråd</h2>
 	<div id="thread">
 		<?php
-			include("classes/thread.class.php");
 			
 			
-			$thread = new Thread();
 			$thread->getThread($_GET['thread']); //get parameter? id of thread
 			
 			$author = new User();
@@ -43,11 +41,12 @@
 					include('messages/emptyfields.php');
 				}else{
 					$comment->createNewComment($_POST['comment'], $_SESSION['email'], $_GET['thread']);
+					header("Location: thread.php?thread=".$_GET['thread']);
 				}
 			}
 	?>
 	<h3>Kommentera</h3>
-	<form action="" method="POST">
+	<form class="form" method="POST">
 		<textarea name="comment" placeholder="Text" cols="50" rows ="1"></textarea><br>
 		<input type="submit" value="Kommentera">
 	</form>

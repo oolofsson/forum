@@ -63,7 +63,7 @@
 
 
 	<h2>Logga in</h2>
-	<form method="POST">
+	<form class="form" method="POST">
 		<input type="email" name="email" placeholder="E-post"><br>
 		<input type="password" name="password" placeholder="Lösenord"><br>
 		<input type="submit" value="Logga in">
@@ -71,7 +71,7 @@
 	</form>
 
 	<h2>Registrera dig</h2>
-	<form method="POST">
+	<form class="form" method="POST">
 		<input type="text" name="firstname" placeholder="Förnamn">
 		<input type="text" name="lastname" placeholder="Efternamn"><br>
 		<div id="register"> 

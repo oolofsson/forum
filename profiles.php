@@ -1,13 +1,10 @@
 <?php
 	session_start();
-	$page_title = "Startsida";
+	$page_title = "Profilsida";
 	include("includes/header.php");
 ?>
 <?php
-	if(!isset($_SESSION['email'])){ //if login in session is not set
-    	header("Location: login.php");
-	}
-	else if(isset($_GET['user'])){
+	if(isset($_GET['user'])){
 		if($_GET['user'] == $_SESSION['email']){
 			header("Location: profile.php");
 		}else{
@@ -26,12 +23,12 @@
 <div id="threadlist">
 	<ul>
 	<?php
-		include("classes/thread.class.php");
-		$thread = new Thread();
-		$threads = $thread->getThreadsByUser($profile->getEmail());
+		
+		
+		$userThreads = $thread->getThreadsByUser($profile->getEmail());
 				
 		$i = 0;
-		foreach($threads as $obj){
+		foreach($userThreads as $obj){
 			if($i > 2) break;
 			echo '<a id="threadauthor">'.$profile->getFirstname().' '.$profile->getLastname().'</a>';
 			

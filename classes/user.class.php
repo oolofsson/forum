@@ -46,6 +46,19 @@
 			$this->userText = $user['usertext'];
 			$this->imagepath = $user['image_path'];				
 		}
+		function getUsers(){
+			include('./includes/connection.php');
+
+			$sql = "SELECT * FROM users";
+			
+			$users = array();
+			$result = $conn->query($sql);
+			while($user = mysqli_fetch_assoc($result)){
+				$users[] = $user;
+			}
+			
+			return $users;
+		}
 		function addText($email, $text){
 			include('./includes/connection.php');
 			$sql = "UPDATE users SET usertext = '$text' WHERE email = '$email'";

@@ -9,8 +9,6 @@
 	<div id="threadlist">
 		<ul>
 			<?php
-				include("classes/thread.class.php");
-				
 				
 				$thread = new Thread();
 				$threads = $thread->getThreads();

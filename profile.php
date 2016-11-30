@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$page_title = "Startsida";
+	$page_title = "Profilsida";
 	include("includes/header.php");
 ?>
 <?php
@@ -31,19 +31,18 @@
 <div id="threadlist">
 	<ul>
 	<?php
-		include("classes/thread.class.php");
-		$thread = new Thread();
-		$threads = $thread->getThreadsByUser($user->getEmail());
+		
+		$profileThreads = $thread->getThreadsByUser($user->getEmail());
 				
 		$i = 0;
-		foreach($threads as $obj){
+		foreach($profileThreads as $obj){
 			if($i > 2) break;
 			echo '<a id="threadauthor">'.$user->getFirstname().' '.$user->getLastname().'</a>';
 			
 			echo '<a href="thread.php?thread='.$obj['id'].'"><li><h2>'.$obj['title'].'</h2><br>
 				<p>'.$obj['text_field'].'</p></li></a>'; 
 
-			if (++$i == 2) break;
+			if (++$i == 2) break; //show only the two latest threads
 		}
 	?>
 	</ul>
