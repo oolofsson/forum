@@ -8,7 +8,7 @@
 	<h2>Tråd</h2>
 	<div id="thread">
 		<?php
-			
+			if(isset($_GET['thread'])){
 			
 			$thread->getThread($_GET['thread']); //get parameter? id of thread
 			
@@ -32,7 +32,6 @@
 			$author->getUserData($obj['author']);
 			echo '<a id="commentauthor" href="profiles.php?user='.$author->getEmail().'">'.$author->getFirstname().' '.$author->getLastname().'</a>';
 			echo '<p id="comment">'.$obj['comment_text'].'</p>';
-			
 		}
 
 		if(isset($_SESSION['email'])){
@@ -53,6 +52,7 @@
 
 <?php
 		}//isset email
+	} //isset thread (GET)
 	include("includes/sidebar.php");
 	include("includes/footer.php");
 ?>

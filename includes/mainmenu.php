@@ -6,6 +6,10 @@
             
             include("classes/user.class.php");
             include("classes/thread.class.php");
+            include('classes/message.class.php');
+            include('classes/answer.class.php');
+            $answer = new Answer();
+            $message = new Message();
             $user = new User();
             $thread = new Thread();
 

@@ -34,7 +34,7 @@
 		function getComments($thread){
 			include('./includes/connection.php');
 
-			$sql = "SELECT * FROM comments WHERE thread = '$thread' ORDER BY date_time DESC";
+			$sql = "SELECT * FROM comments WHERE thread = '$thread' ORDER BY date_time ASC";
 			
 			$comments = array();
 			$result = $conn->query($sql);

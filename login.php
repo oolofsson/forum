@@ -14,7 +14,6 @@
 
 			$email = $_POST['email'];
 			
-
 			//md5 password
 			$password = $_POST['password'];
 			$password_hash = md5($password);
@@ -54,7 +53,7 @@
 						$user->createNewUser($_POST['new_email'], $_POST['new_password'], $_POST['firstname'], $_POST['lastname']);
 						include('messages/createduser.php');
 					}else{
-						include('messages/wronginput.php'); //change to message for same password	
+						include('messages/differentpasswords.php'); //change to message for same password	
 					}
 				}
 	}	
@@ -80,8 +79,7 @@
 			<input type="password" name="repeat_password" placeholder="Repetera lösenord"><br>
 		</div>
 		<input type="submit" value="Registrera">
-		
-	</form>
+	</form>	
 	
 
 

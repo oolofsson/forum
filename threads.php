@@ -20,8 +20,7 @@
 					
 					echo '<a href="thread.php?thread='.$obj['id'].'"><li><h2>'.$obj['title'].'</h2><br>
 						<p>'.$obj['text_field'].'</p></li></a>'; 
-
-					
+			
 				}
 			?>
 		</ul>
