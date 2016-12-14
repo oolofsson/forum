@@ -60,7 +60,7 @@
     background-color: #111;
 }
 #searchform{
-    float: right;
+    float: right !important;
     margin-right: 50px;
 }
 #searchbar{
@@ -97,22 +97,22 @@
     margin: 5px;
     padding: 5px;
 }
-#threadlist li:hover {
+.threadlink:hover {
     background-color: #f2f2f2;
     cursor: pointer;
     color: #728f24;
 }
-#threadlist a{
+.threadlink{
     color: black;
     text-decoration: none;
 }
-#threadauthor{
+.threadauthor{
     border-bottom: 2px solid blue;
     text-decoration: none;
     color: black;
     margin-left: 10px;
 }
-#threadauthor:hover{
+.threadauthor:hover{
     color: blue;
 }
 #thread{

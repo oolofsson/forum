@@ -29,9 +29,9 @@
 			foreach($answers as $obj){
 				$otheruser->getUserData($obj['sender']);
 				echo '<div id="answercontainer">';
-				echo '<a id="answerauthor" href="profiles.php?user='.$otheruser->getEmail().'">'.$otheruser->getFirstname().' '.$otheruser->getLastname().'</a>';
+				echo '<a class="answerauthor" href="profiles.php?user='.$otheruser->getEmail().'">'.$otheruser->getFirstname().' '.$otheruser->getLastname().'</a>';
 				echo '<p id="answer">'.$obj['answer_text'].'</p>';
-				echo '</div>';
+				echo '</div>';	
 			}
 		?>
 	</div>

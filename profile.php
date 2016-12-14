@@ -23,7 +23,7 @@
 ?>
 <div id="infobox">
 	<h4>Profilbild</h4>
-	<img src="img/<?php echo $user->getImagePath() ?>" width="150" height="150" >
+	<img src="img/<?php echo $user->getImagePath() ?>" alt="profilbild" width="150" height="150" >
 	<h4>Om</h4>
 	<p><?php echo $user->getUserText();?></p>
 </div>
@@ -37,10 +37,10 @@
 		$i = 0;
 		foreach($profileThreads as $obj){
 			if($i > 2) break;
-			echo '<a id="threadauthor">'.$user->getFirstname().' '.$user->getLastname().'</a>';
+			echo '<li><a class="threadauthor">'.$user->getFirstname().' '.$user->getLastname().'</a>';
 			
-			echo '<a href="thread.php?thread='.$obj['id'].'"><li><h2>'.$obj['title'].'</h2><br>
-				<p>'.$obj['text_field'].'</p></li></a>'; 
+			echo '<a class="threadlink" href="thread.php?thread='.$obj['id'].'"><h2>'.$obj['title'].'</h2><br>
+				<p>'.$obj['text_field'].'</p></a></li>'; 
 
 			if (++$i == 2) break; //show only the two latest threads
 		}

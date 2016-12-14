@@ -57,14 +57,14 @@
                         $contact->getUserData($otherperson);
                         
                         if(empty($latestanswer)){ //If only one message sent
-                            echo '<a href="message.php?message='.$obj['id'].'"><li><h4>'.$contact->getFirstname().' '.$contact->getLastname().'</h4>
+                            echo '<li><a href="message.php?message='.$obj['id'].'"><h4>'.$contact->getFirstname().' '.$contact->getLastname().'</h4>
                                 <br><p>'.substr($obj['message_text'], 0, 10).'...</p>
-                                <p><strong>'.substr($obj['date_time'], 5, 12).'</strong><p></li></a>';                                
+                                <p><strong>'.substr($obj['date_time'], 5, 12).'</strong></p></a></li>';                                
                         }else{ //display latest answer
 
-                            echo '<a href="message.php?message='.$obj['id'].'"><li><h4>'.$contact->getFirstname().' '.$contact->getLastname().'</h4>
+                            echo '<li><a href="message.php?message='.$obj['id'].'"><h4>'.$contact->getFirstname().' '.$contact->getLastname().'</h4>
                                 <br><p>'.substr($latestanswer['answer_text'], 0, 10).'...</p>
-                                <p><strong>'.substr($latestanswer['date_time'],5,12).'</strong><p></li></a>';
+                                <p><strong>'.substr($latestanswer['date_time'],5,12).'</strong></p></a></li>';
             			}
                     }
         		?>

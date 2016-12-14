@@ -12,8 +12,6 @@
 		if(empty($_POST['title']) || empty($_POST['textfield'])){
 			include('messages/emptyfields.php');
 		}else{
-			include('classes/thread.class.php'); 
-			$thread = new Thread();
 			$thread->createNewThread($_POST['title'], $_POST['textfield'], $user->getEmail());
 			include('messages/createdthread.php');
 		}

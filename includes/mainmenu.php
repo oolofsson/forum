@@ -21,9 +21,9 @@
                 echo '<li><a href="logout.php">Logga ut</a></li>'; //replace with include?
             } 
         ?>
-        <form name="searchform" id="searchform" method="GET">
-            <li><input id="searchbar" type="text" name="search" placeholder="Sök.."></li>
-        </form>
+        <li><form name="searchform" id="searchform" method="GET">
+            <input id="searchbar" type="text" name="search" placeholder="Sök..">
+        </form></li>
     </ul>
 </nav>
 
